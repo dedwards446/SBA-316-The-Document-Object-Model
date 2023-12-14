@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zodiac Matching Game</title>
+  <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 20px;
+        background-color: #f2f2f2;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    #game-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .card {
+        border: 2px solid #ccc;
+        padding: 20px;
+        font-size: 18px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .matched {
+        background-color: #8f8;
+        color: #fff;
+        pointer-events: none;
+    }
+
+    #zodiac-form {
+        margin-top: 20px;
+    }
+
+    #user-zodiac {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .error-message {
+        color: red;
+        margin-top: 10px;
+        display: none;
+    }
+
+    .congratulations {
+        color: #4caf50;
+        font-size: 20px;
+        margin-top: 20px;
+        display: none;
+    }
+
+    #score {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Zodiac Matching Game</h1>
+
+<div id="game-container">
+    <!-- Zodiac signs will be dynamically added here -->
+</div>
+
+<form id="zodiac-form">
+    <label for="user-zodiac">Enter your Zodiac Sign:</label>
+    <input type="text" id="user-zodiac" required>
+    <button type="submit">Submit</button>
+    <p id="error-message" class="error-message">Invalid Zodiac Sign</p>
+    <p id="congratulations" class="congratulations">Congratulations! You found a match!</p>
+</form>
+
+<p id="score">Score: 0</p>
+
+<button id="reset-button">Reset Game</button>
+
+<script src="dom-bom.js"></script>
+</body>
+</html>
